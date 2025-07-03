@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Predictor</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            max-width: 500px;
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+        }
+        #result, #ocrResult {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Disease Prediction</h2>
+    <p>Enter symptoms (e.g., fever cough headache)</p>
+    <input type="text" id="symptoms" placeholder="Type symptoms here..." />
+    <button onclick="predictDisease()">Predict</button>
+    <div id="result"></div>
+
+    <hr style="margin: 30px 0;">
+
+    <h3>Upload Handwritten Prescription</h3>
+    <input type="file" id="imageFile" accept="image/*" />
+    <button onclick="predictFromImage()">Predict from Image</button>
+    <div id="ocrResult"></div>
+</div>
+
+<script>
+    async function predictDisease() {
+        const symptoms = document.getElementById("symptoms").value;
+        const response = await fetch("http://localhost:8000/predict", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ symptoms: symptoms })
+        });
+
+        const data = await response.json();
+        document.getElementById("result").innerText = "🩺 Predicted Disease: " + data.prediction;
+    }
+
+    async function predictFromImage() {
+        const fileInput = document.getElementById("imageFile");
+        const formData = new FormData();
+        formData.append("file", fileInput.files[0]);
+
+        const response = await fetch("http://localhost:8000/ocr-predict", {
+            method: "POST",
+            body: formData
+        });
+
+        const result = await response.json();
+        document.getElementById("ocrResult").innerHTML =
+            `<b>Extracted Text:</b> ${result.extracted_text}<br>`;
+    }
+</script>
+
+</body>
+</html>
