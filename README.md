@@ -1,26 +1,29 @@
 
-# 🧠 Disease Prediction & Handwritten Prescription OCR Web App
+#  Disease Prediction & Handwritten Prescription OCR Web App
 
-This web application allows users to:
-- Predict a possible disease based on entered symptoms.
-- Upload handwritten prescriptions to extract medication details using OCR (Optical Character Recognition).
+Welcome to your smart medical assistant! This web application is designed to help users:
 
+  Predict possible diseases by simply entering their symptoms.
+
+  Upload handwritten medical prescriptions and get the content digitized using OCR (Optical Character Recognition).
+
+It’s built with simplicity in mind — whether you’re a doctor digitizing notes or a patient trying to understand symptoms or prescriptions.
 ---
 
-## 📌 Features
+##  What It Can Do
 
-### 🔍 Disease Prediction
+###  Predict Diseases from Symptoms
 - Users can enter symptoms such as `fever, cough, headache` into a text box.
 - Upon clicking the **Predict** button, the system suggests a probable disease using a trained machine learning model.
 
-### 📷 OCR-based Prescription Analysis
+### Understand Handwritten Prescriptions
 - Users can upload a scanned or photographed handwritten prescription.
 - The system extracts readable medical content (like medication names and dosage) using OCR.
 - This helps digitize and interpret handwritten doctor notes.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
 | Layer           | Tools Used                                           |
 |----------------|------------------------------------------------------|
@@ -32,24 +35,10 @@ This web application allows users to:
 
 ---
 
-## 📂 Project Structure
-
-```
-disease_prediction_ocr/
-├── static/
-│   └── style.css
-├── templates/
-│   └── index.html
-├── model/
-│   └── disease_model.pkl
-├── app.py
-├── requirements.txt
-└── README.md
-```
 
 ---
 
-## ⚙️ How it Works
+##  How it Works
 
 ### 1. Disease Prediction Flow
 - User enters symptoms like: `itching, vomiting, fatigue`.
@@ -63,35 +52,15 @@ disease_prediction_ocr/
 
 ---
 
-## ▶️ Getting Started
+##  Getting Started
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/disease-prediction-ocr.git
-cd disease-prediction-ocr
-```
-
-### 2. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
 
 Make sure **Tesseract-OCR** is installed and added to system PATH:  
 🔗 [Install Instructions](https://github.com/tesseract-ocr/tesseract)
 
-### 3. Run the App
 
-```bash
-python app.py
-```
 
-Navigate to `http://localhost:5000` in your browser.
-
----
-
-## 📦 Requirements
+##  Requirements
 
 ```
 Flask
@@ -105,7 +74,7 @@ joblib
 
 ---
 
-## 💡 Future Improvements
+##  Future Improvements
 
 - Add multilingual OCR support.
 - Connect to drug databases for medicine explanation or alternatives.
@@ -114,7 +83,7 @@ joblib
 
 ---
 
-## 📸 Demo Screenshots
+##  Demo Screenshots
 
  Home Page                             
 
@@ -133,9 +102,9 @@ joblib
 
 
 
-## 👨‍⚕️ Author
+## 👨‍⚕ Author
 
-**Saranragav K**  
+**SARANRAGAV K**  
 Open for collaboration on healthcare + AI projects.
 
 
