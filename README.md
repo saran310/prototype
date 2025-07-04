@@ -102,7 +102,7 @@ joblib
 
 
 
-## 👨‍⚕ Author
+##  Author
 
 **SARANRAGAV K**  
 Open for collaboration on healthcare + AI projects.
