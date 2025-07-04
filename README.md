@@ -23,7 +23,7 @@ It’s built with simplicity in mind — whether you’re a doctor digitizing no
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 | Layer           | Tools Used                                           |
 |----------------|------------------------------------------------------|
